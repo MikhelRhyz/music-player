@@ -9,6 +9,8 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link rel="icon" href="data:," />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -39,7 +41,7 @@
               aria-label="Play"
             >
               <span id="playIcon">►</span>
-              <span id="pauseIcon" style="display: none">❚❚</span>
+              <span id="pauseIcon" class="hidden">❚❚</span>
             </button>
 
             <!-- Time displays -->
@@ -77,7 +79,7 @@
         <div class="col-12">
           <!-- Hidden audio element. JS will control it. Put track source and metadata here or let JS set src dynamically. -->
           <audio id="audio" preload="metadata">
-            <source src="assets/audio/sample.mp3" type="audio/mpeg" />
+            <source src="music/paraluman.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
         </div>

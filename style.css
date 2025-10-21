@@ -35,3 +35,7 @@
     /* Small tweaks for keyboard focus */
     .play-btn:focus { box-shadow: 0 0 0 4px rgba(13,110,253,0.12); }
     .seek { cursor: pointer; }
+
+    .hidden{
+        display: none
+    }
