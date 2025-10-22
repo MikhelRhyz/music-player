@@ -1,4 +1,6 @@
-let myAudio = document.querySelector("#audio");
+import { playPauseMusic } from "./playPause.js";
+
+export let myAudio = document.querySelector("#audio");
 const playPauseBtn = document.querySelector("#playPauseBtn");
 let isAudioOn = false;
 const playIcon = document.querySelector("#playIcon");
@@ -8,20 +10,16 @@ const currentTime = document.querySelector("#currentTime");
 const duration = document.querySelector("#duration");
 const seekBar = document.querySelector("#seekBar");
 
+document.addEventListener("keydown", (e) => {
+  e.preventDefault();
+  let key = e.key === " " ? "space" : e.key;
+  if (key === "space") {
+    playPauseMusic(isAudioOn);
+  } 
+})
+
 playPauseBtn.addEventListener("click", () => {
-  if (!isAudioOn) {
-    myAudio.play();
-    isAudioOn = true;
-    playIcon.classList.add("hidden");
-    pauseIcon.classList.remove("hidden");
-    playPauseBtn.setAttribute("aria-label", "Pause");
-  } else {
-    myAudio.pause();
-    playIcon.classList.remove("hidden");
-    pauseIcon.classList.add("hidden");
-    isAudioOn = false;
-    playPauseBtn.setAttribute("aria-label", "Play");
-  }
+  playPauseMusic(isAudioOn);
 });
 
 
@@ -72,11 +70,12 @@ myAudio.addEventListener("canplay", () => {
 });
 
 seekBar.addEventListener("click", (event) => {
-  const clickX =  event.offsetX;
+  const clickX = event.offsetX;
   const containerWidth = seekBar.offsetWidth;
-  myAudio.currentTime = (clickX/containerWidth) * myAudio.duration;
+  myAudio.currentTime = (clickX / containerWidth) * myAudio.duration;
 
   console.log(clickX);
   console.log(containerWidth);
   console.log(myAudio.duration);
 });
+
