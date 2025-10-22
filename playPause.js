@@ -1,17 +1,14 @@
 import { myAudio } from "./script.js";
 
-export function playPauseMusic(isAudioOn) {
-  if (!isAudioOn) {
-    myAudio.play();
-    isAudioOn = true;
-    playIcon.classList.add("hidden");
-    pauseIcon.classList.remove("hidden");
-    playPauseBtn.setAttribute("aria-label", "Pause");
-  } else {
-    myAudio.pause();
-    playIcon.classList.remove("hidden");
-    pauseIcon.classList.add("hidden");
-    isAudioOn = false;
-    playPauseBtn.setAttribute("aria-label", "Play");
-  }
+const playPauseBtn = document.querySelector("#playPauseBtn");
+
+export function playPauseMusic(shouldPlay) {
+    if (shouldPlay) {
+        myAudio.play();
+        playPauseBtn.setAttribute("aria-pressed", true);
+
+    } else {
+        myAudio.pause();
+        playPauseBtn.setAttribute("aria-pressed", false);
+    }
 }
