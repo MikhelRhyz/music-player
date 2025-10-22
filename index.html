@@ -114,22 +114,6 @@
         </div>
       </div>
     </main>
-
-    <!-- JS hooks - user will implement behavior. Below are suggested event hooks and behaviour in comments. -->
-    <script type="module" src="script.js">
-      /*
-        Suggested JS responsibilities (you said you'll handle JS):
-
-        - Get elements by ID: audio, playPauseBtn, playIcon, pauseIcon, seekBar, seekFill, currentTime, duration
-        - On audio 'loadedmetadata' -> set duration text and update aria-valuemax
-        - On audio 'timeupdate' -> update currentTime and set seekFill.style.width = (audio.currentTime/audio.duration)*100 + '%'
-        - Play/pause button: toggle audio.play() / audio.pause(); toggle aria-pressed and icons
-        - Clicking on seekBar: compute clicked position ratio and set audio.currentTime = ratio * audio.duration
-        - Keyboard accessibility: allow space to toggle play/pause when playPauseBtn focused, left/right arrow to rewind/forward when seekBar focused
-        - Rewind/Forward buttons: audio.currentTime = Math.max(0, audio.currentTime - 10) / Math.min(audio.duration, audio.currentTime + 10)
-
-        Keep ARIA attributes up to date (aria-labels, aria-valuenow for seek if desired).
-      */
-    </script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
